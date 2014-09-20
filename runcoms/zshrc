@@ -3,6 +3,7 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Eduardo Sebastian <esebastian@altiora.es>
 #
 
 # Source Prezto.
@@ -11,3 +12,31 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# --------
+# Aliases:
+# --------
+
+# mongo
+alias mongo-start='mongod --fork --config /usr/local/etc/mongod.conf > /dev/null'
+alias mongo-stop='pkill -f mongod && sleep 0.1'
+
+# redis
+alias redis-start='redis-server /usr/local/etc/redis.conf --daemonize yes'
+alias redis-stop='pkill -f redis-server && sleep 0.1'
+
+#-----------
+# Functions:
+#-----------
+# env
+function setenv {
+  for i in `cat .env`; do
+    export $i
+  done
+}
+
+function unsetenv {
+  for i in `cat .env`; do
+    unset `echo $i | cut -f 1 -d "="`
+  done
+}
