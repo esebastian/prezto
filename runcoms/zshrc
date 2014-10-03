@@ -40,3 +40,16 @@ function unsetenv {
     unset `echo $i | cut -f 1 -d "="`
   done
 }
+
+# java
+function setjdk {
+  local current_jdk=$([[ $JAVA_HOME =~ 1\.([4-9])\.0 ]] && echo $match)
+  local new_jdk=$1
+
+  if [ ! -z $new_jdk ]; then
+    export JAVA_HOME=$(echo $JAVA_HOME | sed -E -e "s/$current_jdk/$new_jdk/")
+    current_jdk=$new_jdk
+  fi
+
+  echo Current JDK: 1.$current_jdk.0
+}
