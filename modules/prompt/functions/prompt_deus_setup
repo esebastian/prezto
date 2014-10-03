@@ -26,6 +26,7 @@ function prompt_deus_daemons {
   [[ $processes =~ redis-server ]] && _prompt_deus_daemons=$_prompt_deus_daemons'redis '
   [[ $processes =~ mongod ]] && _prompt_deus_daemons=$_prompt_deus_daemons'mongo '
   [[ $processes =~ postgres ]] && _prompt_deus_daemons=$_prompt_deus_daemons'postgres '
+  [[ $processes =~ nginx ]] && _prompt_deus_daemons=$_prompt_deus_daemons'nginx '
 }
 
 function prompt_deus_precmd {

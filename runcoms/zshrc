@@ -25,6 +25,10 @@ alias mongo-stop='pkill -f mongod && sleep 0.1'
 alias redis-start='redis-server /usr/local/etc/redis.conf --daemonize yes'
 alias redis-stop='pkill -f redis-server && sleep 0.1'
 
+# nginx
+alias nginx-start='nginx -c /usr/local/etc/nginx/nginx.conf'
+alias nginx-stop='pkill -f nginx && sleep 0.1'
+
 #-----------
 # Functions:
 #-----------
