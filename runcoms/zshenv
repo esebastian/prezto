@@ -15,6 +15,7 @@ fi
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0/Contents/Home
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export GOPATH=~/Code/go
+export SBT_OPTS='-XX:MaxPermSize=256M -XX:+CMSClassUnloadingEnabled'
 export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.3
 export PYENV_ROOT=/usr/local/var/pyenv
 export RBENV_ROOT=/usr/local/var/rbenv
