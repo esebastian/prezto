@@ -17,8 +17,8 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export GOPATH=~/Code/go
 export SBT_OPTS='-XX:MaxPermSize=256M -XX:+CMSClassUnloadingEnabled'
 export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.3
-export PYENV_ROOT=/usr/local/var/pyenv
-export RBENV_ROOT=/usr/local/var/rbenv
+export PYENV_ROOT=/usr/local/var/lib/pyenv
+export RBENV_ROOT=/usr/local/var/lib/rbenv
 
 if [[ $TERM_PROGRAM = iTerm* ]]; then
   export LSCOLORS='ExFxCxDxBxegedabagacad'
