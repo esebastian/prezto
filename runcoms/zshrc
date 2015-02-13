@@ -6,9 +6,6 @@
 #   Eduardo Sebastian <esebastian@altiora.es>
 #
 
-# Custom Homebrew completions
-source $(brew --prefix)/share/zsh/site-functions/_aws
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -16,9 +13,20 @@ fi
 
 # Customize to your needs...
 
+# -------------------
+# Custom completions:
+# -------------------
+
+if [[ -s "$(brew --prefix)/share/zsh/site-functions/_aws" ]]; then
+  source "$(brew --prefix)/share/zsh/site-functions/_aws"
+fi
+
 # --------
 # Aliases:
 # --------
+
+# python
+alias http-serve='python2 -m SimpleHTTPServer'
 
 # mongo
 alias mongo-start='mongod --fork --config /usr/local/etc/mongod.conf > /dev/null'
