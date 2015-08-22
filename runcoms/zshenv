@@ -11,15 +11,20 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# set global settings
+LOCAL=/usr/local
+CASKROOM=/opt/caskroom
+ 
 # set up common environment variables
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0/Contents/Home
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=$CASKROOM"
+export JAVA_HOME=/Library/Java/Home
+export GROOVY_HOME=$LOCAL/opt/groovy/libexec
 export GOPATH=~/Code/go
-export SBT_OPTS='-XX:MaxPermSize=256M -XX:+CMSClassUnloadingEnabled'
-export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.3
-export PYENV_ROOT=/usr/local/var/lib/pyenv
-export RBENV_ROOT=/usr/local/var/lib/rbenv
-
+export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M -Dsbt.ivy.home=$LOCAL/var/lib/ivy2/ -Divy.home=$LOCAL/var/lib/ivy2/"
+export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.4
+export PYENV_ROOT=$LOCAL/var/lib/pyenv
+export RBENV_ROOT=$LOCAL/var/lib/rbenv
+export NVM_DIR=$LOCAL/var/lib/nvm
 if [[ $TERM_PROGRAM = iTerm* ]]; then
   export LSCOLORS='ExFxCxDxBxegedabagacad'
   export LS_COLORS='di=1;34:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=34;43:'
