@@ -30,6 +30,9 @@ fi
 # Aliases:
 # --------
 
+# papertrail
+alias pt=papertrail
+
 # python
 alias http-serve='python2 -m SimpleHTTPServer'
 
