@@ -35,6 +35,13 @@ alias pt=papertrail
 
 # python
 alias http-serve='python2 -m SimpleHTTPServer'
+alias pyenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include pyenv'
+
+# ruby
+alias rbenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include rbenv'
+
+# node
+alias nvm='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include nvm'
 
 # mongo
 alias mongo-start='/usr/local/bin/mongod --fork --config /usr/local/etc/mongod.conf > /dev/null'
