@@ -37,15 +37,15 @@ alias pt=papertrail
 alias http-serve='python2 -m SimpleHTTPServer'
 
 # mongo
-alias mongo-start='mongod --fork --config /usr/local/etc/mongod.conf > /dev/null'
+alias mongo-start='/usr/local/bin/mongod --fork --config /usr/local/etc/mongod.conf > /dev/null'
 alias mongo-stop='pkill -f mongod && sleep 0.1'
 
 # redis
-alias redis-start='redis-server /usr/local/etc/redis.conf --daemonize yes'
+alias redis-start='/usr/local/bin/redis-server /usr/local/etc/redis.conf --daemonize yes'
 alias redis-stop='pkill -f redis-server && sleep 0.1'
 
 # nginx
-alias nginx-start='nginx -c /usr/local/etc/nginx/nginx.conf'
+alias nginx-start='/usr/local/bin/nginx -c /usr/local/etc/nginx/nginx.conf'
 alias nginx-stop='pkill -f nginx && sleep 0.1'
 
 #-----------
