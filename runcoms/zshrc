@@ -30,6 +30,9 @@ fi
 # Aliases:
 # --------
 
+# shell
+alias mmv='noglob zmv -W'
+
 # papertrail
 alias pt=papertrail
 
