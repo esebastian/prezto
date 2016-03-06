@@ -78,7 +78,9 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 # Format the git-log output
 zstyle ':prezto:module:git:log:oneline' format '%C(auto)%h%d %s'
+zstyle ':prezto:module:git:log:medium'  format '%C(bold)Commit:%C(reset) %C(auto)%H%C(auto)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(bold red)%ai (%ar)%C(reset)%n%+B'
 
+zstyle ':prezto:module:git:log:brief'   format '%C(auto)%h%C(reset) %s%n%C(bold red)(%ar by %an)%C(auto)%d%C(reset)%n'
 #
 # GNU Utility
 #
