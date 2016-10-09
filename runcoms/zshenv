@@ -16,7 +16,7 @@ LOCAL=/usr/local
 CASKROOM=/opt/Caskroom
 
 # set up common environment variables
-export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=$CASKROOM"
+export HOMEBREW_CASK_OPTS="--caskroom=$CASKROOM"
 export JAVA_HOME=/Library/Java/Home
 export GROOVY_HOME=$LOCAL/opt/groovy/libexec
 export GOPATH=~/Code/go
