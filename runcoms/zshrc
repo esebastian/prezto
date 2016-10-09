@@ -39,6 +39,7 @@ alias mmv='noglob zmv -W'
 alias pyenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include pyenv'
 
 # ruby
+alias rb='ruby'
 alias rbenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include rbenv'
 
 # node
