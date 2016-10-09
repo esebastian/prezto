@@ -22,7 +22,7 @@ export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -Dsbt.i
 export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.6
 export PYENV_ROOT=$LOCAL/var/lib/pyenv
 export RBENV_ROOT=$LOCAL/var/lib/rbenv
-export NVM_DIR=$LOCAL/var/lib/nvm
+export NODENV_ROOT=$LOCAL/var/lib/nodenv
 
 # set terminal colors
 if [[ ! "$TERM_PROGRAM" = "Apple_Terminal" ]]; then

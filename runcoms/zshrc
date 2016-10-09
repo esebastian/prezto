@@ -39,7 +39,7 @@ fi
 [[ `which pyenv` ]] && eval "$(pyenv init -)"
 
 # node
-[[ `which nvm` ]] && source $(brew --prefix nvm)/nvm.sh
+[[ `which nodenv` ]] && eval "$(nodenv init -)"
 
 # --------
 # Aliases:
@@ -57,14 +57,8 @@ alias rb='ruby'
 alias rbenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include rbenv'
 
 # node
-alias nvm='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include nvm'
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
+alias nd='node'
+alias nodenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include nodenv'
 
 # mongo
 alias mongo-start='/usr/local/bin/mongod --fork --config /usr/local/etc/mongod.conf > /dev/null'
