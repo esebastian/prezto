@@ -28,6 +28,19 @@ if [[ -r "~/.authkeys" ]]; then
   source "~/.authkeys"
 fi
 
+# -----------------
+# Version managers:
+# -----------------
+
+# ruby
+[[ `which rbenv` ]] && eval "$(rbenv init -)"
+
+# python
+[[ `which pyenv` ]] && eval "$(pyenv init -)"
+
+# node
+[[ `which nvm` ]] && source $(brew --prefix nvm)/nvm.sh
+
 # --------
 # Aliases:
 # --------
