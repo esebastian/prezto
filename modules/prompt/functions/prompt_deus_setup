@@ -82,7 +82,7 @@ function prompt_deus_setup {
     'rprompt' '%A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
-  PROMPT='%B%F{blue}${_prompt_deus_pwd}%f%b${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
+  PROMPT='%B%F{blue}%m:${_prompt_deus_pwd}%f%b${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
   RPROMPT='%F{red}${_prompt_deus_daemons}%f${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %B%F{green}V%f%b"}${git_info[rprompt]}'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
