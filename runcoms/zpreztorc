@@ -25,20 +25,12 @@ zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
-  'archive' \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'history-substring-search' \
-  'directory' \
-  'spectrum' \
   'utility' \
+  'directory' \
+  'history' \
   'git' \
-  'python' \
-  'ruby' \
-  'node' \
   'completion' \
+  'history-substring-search' \
   'prompt'
 
 #
