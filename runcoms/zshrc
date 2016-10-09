@@ -36,6 +36,7 @@ fi
 alias mmv='noglob zmv -W'
 
 # python
+alias py='python'
 alias pyenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include pyenv'
 
 # ruby
