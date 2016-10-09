@@ -35,9 +35,6 @@ fi
 # shell
 alias mmv='noglob zmv -W'
 
-# papertrail
-alias pt=papertrail
-
 # python
 alias pyenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include pyenv'
 
