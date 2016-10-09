@@ -13,8 +13,8 @@ fi
 
 # set global settings
 LOCAL=/usr/local
-CASKROOM=/opt/caskroom
- 
+CASKROOM=/opt/Caskroom
+
 # set up common environment variables
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=$CASKROOM"
 export JAVA_HOME=/Library/Java/Home
