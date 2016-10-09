@@ -24,7 +24,9 @@ fi
 # ----------
 # Auth keys:
 #-----------
-[[ -r ~/.authkeys ]] && . ~/.authkeys
+if [[ -r "~/.authkeys" ]]; then
+  source "~/.authkeys"
+fi
 
 # --------
 # Aliases:
