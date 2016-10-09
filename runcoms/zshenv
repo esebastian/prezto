@@ -21,7 +21,7 @@ export JAVA_HOME=/Library/Java/Home
 export GROOVY_HOME=$LOCAL/opt/groovy/libexec
 export GOPATH=~/Code/go
 export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -Dsbt.ivy.home=$LOCAL/var/lib/ivy2/ -Divy.home=$LOCAL/var/lib/ivy2/"
-export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.5
+export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.6
 export PYENV_ROOT=$LOCAL/var/lib/pyenv
 export RBENV_ROOT=$LOCAL/var/lib/rbenv
 export NVM_DIR=$LOCAL/var/lib/nvm
