@@ -37,6 +37,7 @@ fi
 
 # python
 [[ `which pyenv` ]] && eval "$(pyenv init -)"
+[[ `which pyenv-virtualenv` ]] && eval "$(pyenv virtualenv-init -)"
 
 # node
 [[ `which nodenv` ]] && eval "$(nodenv init -)"
