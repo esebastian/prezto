@@ -17,9 +17,14 @@ fi
 # Custom completions:
 # -------------------
 
+# aws client
 if [[ -s "$(brew --prefix)/share/zsh/site-functions/_aws" ]]; then
   source "$(brew --prefix)/share/zsh/site-functions/_aws"
 fi
+
+# docker
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # ----------
 # Auth keys:
