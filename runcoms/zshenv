@@ -18,7 +18,7 @@ CASKROOM=/opt/Caskroom
 # set up common environment variables
 export HOMEBREW_CASK_OPTS="--caskroom=$CASKROOM"
 export JAVA_HOME=/Library/Java/Home
-export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -Dsbt.ivy.home=$LOCAL/var/lib/ivy2/ -Divy.home=$LOCAL/var/lib/ivy2/"
+export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -Dsbt.ivy.home=$LOCAL/var/cache/ivy2/ -Divy.home=$LOCAL/var/cache/ivy2/"
 export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.6
 export PYENV_ROOT=$LOCAL/var/lib/pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
