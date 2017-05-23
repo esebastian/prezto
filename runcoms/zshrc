@@ -13,13 +13,15 @@ fi
 
 # Customize to your needs...
 
+local_path="/usr/local" # $(brew --prefix)
+
 # -------------------
 # Custom completions:
 # -------------------
 
 # aws client
-if [[ -s "$(brew --prefix)/share/zsh/site-functions/_aws" ]]; then
-  source "$(brew --prefix)/share/zsh/site-functions/_aws"
+if [[ -s "${local_path}/share/zsh/site-functions/_aws" ]]; then
+  source "${local_path}/share/zsh/site-functions/_aws"
 fi
 
 # docker
@@ -38,14 +40,14 @@ fi
 # -----------------
 
 # ruby
-[[ `which rbenv` ]] && eval "$(rbenv init -)"
+[[ -s "${local_path}/bin/rbenv" ]] && eval "$(rbenv init -)"
 
 # python
-[[ `which pyenv` ]] && eval "$(pyenv init -)"
-[[ `which pyenv-virtualenv` ]] && eval "$(pyenv virtualenv-init -)"
+[[ -s "${local_path}/bin/pyenv" ]] && eval "$(pyenv init -)"
+[[ -s "${local_path}/bin/pyenv-virtualenv" ]] && eval "$(pyenv virtualenv-init -)"
 
 # node
-[[ `which nodenv` ]] && eval "$(nodenv init -)"
+[[ -s "${local_path}/bin/nodenv" ]] && eval "$(nodenv init -)"
 
 # --------
 # Aliases:
