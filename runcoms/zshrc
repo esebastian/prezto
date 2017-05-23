@@ -58,15 +58,15 @@ alias mmv='noglob zmv -W'
 
 # python
 alias py='python'
-alias pyenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include pyenv'
+alias pyenv="LDFLAGS=\"-L${local_path}/opt/openssl/lib -L${local_path}/opt/readline/lib\" CPPFLAGS=\"-I${local_path}/opt/openssl/include -I${local_path}/opt/readline/lib\" pyenv"
 
 # ruby
 alias rb='ruby'
-alias rbenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include rbenv'
+alias rbenv="LDFLAGS=-L${local_path}/opt/openssl/lib CPPFLAGS=-I${local_path}/opt/openssl/include rbenv"
 
 # node
 alias nd='node'
-alias nodenv='LDFLAGS=-L/usr/local/opt/openssl/lib CPPFLAGS=-I/usr/local/opt/openssl/include nodenv'
+alias nodenv="LDFLAGS=-L${local_path}/opt/openssl/lib CPPFLAGS=-I${local_path}/opt/openssl/include nodenv"
 
 # mongo
 alias mongo-start='/usr/local/bin/mongod --fork --config /usr/local/etc/mongod.conf > /dev/null'
