@@ -85,15 +85,17 @@ alias nginx-stop='pkill -f nginx && sleep 0.1'
 #-----------
 # env
 function setenv {
-  for i in `cat .env`; do
+  while read i; do
+    [[ "$i" = "#"* ]] && continue
     export $i
-  done
+  done < .env
 }
 
 function unsetenv {
-  for i in `cat .env`; do
+  while read i; do
+    [[ "$i" = "#"* ]] && continue
     unset `echo $i | cut -f 1 -d "="`
-  done
+  done < .env
 }
 
 # java
