@@ -16,6 +16,7 @@ local_path="/usr/local" # $(brew --prefix)
 
 # set up common environment variables
 export JAVA_HOME=/Library/Java/Home
+export GRADLE_OPTS=-Dgradle.user.home=${local_path}/var/cache/gradle
 export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -Dsbt.ivy.home=${local_path}/var/cache/ivy2/ -Divy.home=${local_path}/var/cache/ivy2/"
 export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.6
 export PYENV_ROOT=${local_path}/var/lib/pyenv
