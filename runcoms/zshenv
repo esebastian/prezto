@@ -12,18 +12,16 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 # set global settings
-LOCAL=/usr/local
-CASKROOM=/opt/Caskroom
+local_path="/usr/local" # $(brew --prefix)
 
 # set up common environment variables
-export HOMEBREW_CASK_OPTS="--caskroom=$CASKROOM"
 export JAVA_HOME=/Library/Java/Home
-export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -Dsbt.ivy.home=$LOCAL/var/cache/ivy2/ -Divy.home=$LOCAL/var/cache/ivy2/"
+export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -Dsbt.ivy.home=${local_path}/var/cache/ivy2/ -Divy.home=${local_path}/var/cache/ivy2/"
 export PG_ROOT=/Applications/Postgres.app/Contents/Versions/9.6
-export PYENV_ROOT=$LOCAL/var/lib/pyenv
+export PYENV_ROOT=${local_path}/var/lib/pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export RBENV_ROOT=$LOCAL/var/lib/rbenv
-export NODENV_ROOT=$LOCAL/var/lib/nodenv
+export RBENV_ROOT=${local_path}/var/lib/rbenv
+export NODENV_ROOT=${local_path}/var/lib/nodenv
 
 # set terminal colors
 if [[ ! "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
