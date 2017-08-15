@@ -48,6 +48,11 @@ typeset -gU cdpath fpath mailpath path
 #   $path
 # )
 
+# fix python path if Homebrew python present
+if [[ -e ${local_path}/bin/python2 && ! -e ${local_path}/bin/python ]]; then
+  path=(${local_path}/opt/python/libexec/bin $path)
+fi
+
 # add gopath if present
 if [[ -d $GOPATH ]]; then
   path+=(${local_path}/go/bin $GOPATH/bin)
