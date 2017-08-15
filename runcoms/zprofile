@@ -33,6 +33,8 @@ export LC_ALL='en_US.UTF-8'
 # Paths
 #
 
+local_path="/usr/local" # $(brew --prefix)
+
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
@@ -46,16 +48,19 @@ typeset -gU cdpath fpath mailpath path
 #   $path
 # )
 
+# add gopath if present
+if [[ -d $GOPATH ]]; then
+  path+=(${local_path}/go/bin $GOPATH/bin)
+fi
+
+# use Postgres.app binaries if present
+if [[ -d $PG_ROOT ]]; then
+  path+=$PG_ROOT/bin
+fi
+
+# add home bin directory if present
 if [[ -d $HOME/bin ]]; then
   path+=$HOME/bin
-fi
-
-if [[ ! -z $GOPATH ]]; then
-  path+=$GOPATH/bin
-fi
-
-if [[ ! -z $PG_ROOT ]]; then
-  path+=$PG_ROOT/bin
 fi
 
 #
