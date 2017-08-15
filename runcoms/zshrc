@@ -31,7 +31,7 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 # ----------
 # Auth keys:
 #-----------
-if [[ -r "~/.authkeys" ]]; then
+if [[ -s "~/.authkeys" ]]; then
   source "~/.authkeys"
 fi
 
@@ -55,10 +55,12 @@ fi
 
 # shell
 alias mmv='noglob zmv -W'
+alias la='ll -a'
 
 # python
 alias py='python'
 alias pyenv="LDFLAGS=\"-L${local_path}/opt/openssl/lib -L${local_path}/opt/readline/lib\" CPPFLAGS=\"-I${local_path}/opt/openssl/include -I${local_path}/opt/readline/lib\" pyenv"
+alias pyserve='python -m SimpleHTTPServer'
 
 # ruby
 alias rb='ruby'
@@ -69,16 +71,16 @@ alias nd='node'
 alias nodenv="LDFLAGS=-L${local_path}/opt/openssl/lib CPPFLAGS=-I${local_path}/opt/openssl/include nodenv"
 
 # mongo
-alias mongo-start='/usr/local/bin/mongod --fork --config /usr/local/etc/mongod.conf > /dev/null'
-alias mongo-stop='pkill -f mongod && sleep 0.1'
+alias mongoup='/usr/local/bin/mongod --fork --config /usr/local/etc/mongod.conf > /dev/null'
+alias mongodown='pkill -f mongod && sleep 0.1'
 
 # redis
-alias redis-start='/usr/local/bin/redis-server /usr/local/etc/redis.conf --daemonize yes'
-alias redis-stop='pkill -f redis-server && sleep 0.1'
+alias redisup='/usr/local/bin/redis-server /usr/local/etc/redis.conf --daemonize yes'
+alias redisdown='pkill -f redis-server && sleep 0.1'
 
 # nginx
-alias nginx-start='/usr/local/bin/nginx -c /usr/local/etc/nginx/nginx.conf'
-alias nginx-stop='pkill -f nginx && sleep 0.1'
+alias nginxup='/usr/local/bin/nginx -c /usr/local/etc/nginx/nginx.conf'
+alias nginxdown='pkill -f nginx && sleep 0.1'
 
 #-----------
 # Functions:
@@ -96,19 +98,6 @@ function unsetenv {
     [[ "$i" = "#"* ]] && continue
     unset `echo $i | cut -f 1 -d "="`
   done < .env
-}
-
-# java
-function setjdk {
-  local current_jdk=$([[ $JAVA_HOME =~ 1\.([4-9])\.0 ]] && echo $match)
-  local new_jdk=$1
-
-  if [ ! -z $new_jdk ]; then
-    export JAVA_HOME=$(echo $JAVA_HOME | sed -E -e "s/$current_jdk/$new_jdk/")
-    current_jdk=$new_jdk
-  fi
-
-  echo Current JDK: 1.$current_jdk.0
 }
 
 # text colors
