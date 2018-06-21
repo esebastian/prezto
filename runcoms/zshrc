@@ -31,8 +31,8 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 # ----------
 # Auth keys:
 #-----------
-if [[ -s "~/.authkeys" ]]; then
-  source "~/.authkeys"
+if [[ -s "${HOME}/.authkeys" ]]; then
+  source "${HOME}/.authkeys"
 fi
 
 # -----------------
