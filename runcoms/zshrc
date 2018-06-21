@@ -55,7 +55,8 @@ fi
 
 # shell
 alias mmv='noglob zmv -W'
-alias la='ll -a'
+alias la='ls -A'
+alias ll='ls -lha'
 
 # python
 alias py='python'
