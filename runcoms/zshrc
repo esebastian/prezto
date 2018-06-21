@@ -28,6 +28,11 @@ fi
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+# heroku client
+if [[ -s "${HOME}/Library/Caches/heroku/autocomplete/zsh_setup" ]]; then
+  source "${HOME}/Library/Caches/heroku/autocomplete/zsh_setup"
+fi
+
 # ----------
 # Auth keys:
 #-----------
