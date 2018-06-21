@@ -55,7 +55,7 @@ fi
 
 # add gopath if present
 if [[ -d $GOPATH ]]; then
-  path+=(${local_path}/go/bin $GOPATH/bin)
+  path+=$GOPATH/bin
 fi
 
 # use Postgres.app binaries if present
