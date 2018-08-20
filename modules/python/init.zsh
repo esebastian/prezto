@@ -11,12 +11,12 @@
 if [[ -s "$HOME/.pyenv/bin/pyenv" ]]; then
   path=("$HOME/.pyenv/bin" $path)
   export PYENV_ROOT=$(pyenv root)
-  eval "$(pyenv init -)"
+  eval "$(pyenv init - --no-rehash zsh)"
 
 # Load package manager installed pyenv into the shell session.
 elif (( $+commands[pyenv] )); then
   export PYENV_ROOT=$(pyenv root)
-  eval "$(pyenv init -)"
+  eval "$(pyenv init - --no-rehash zsh)"
 
 # Initialize plugin pyenv virtualenv into the shell session if present.
 elif (( $+commands[pyenv-virtualenv] )); then
@@ -110,7 +110,7 @@ if (( $+VIRTUALENVWRAPPER_VIRTUALENV || $+commands[virtualenv] )) && \
 
   if (( $pyenv_plugins[(i)virtualenv-init] <= $#pyenv_plugins )); then
     # Enable 'virtualenv' with 'pyenv'.
-    eval "$(pyenv virtualenv-init -)"
+    eval "$(pyenv virtualenv-init - zsh)"
 
     # Optionally activate 'virtualenvwrapper' plugin when available.
     if (( $pyenv_plugins[(i)virtualenvwrapper(_lazy|)] <= $#pyenv_plugins )); then
