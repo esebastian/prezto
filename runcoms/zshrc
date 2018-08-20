@@ -123,4 +123,5 @@ function dcolors {
 # iTerm shell integration:
 #-------------------------
 
+unsetopt prompt_cr prompt_sp
 test -s "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
