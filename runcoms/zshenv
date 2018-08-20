@@ -24,6 +24,8 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export RBENV_ROOT=${local_path}/var/lib/rbenv
 export NODENV_ROOT=${local_path}/var/lib/nodenv
 export GOPATH=$HOME/Code/go
+export MIX_HOME=${local_path}/var/cache/mix
+export HEX_HOME=${local_path}/var/cache/hex
 
 # set terminal colors
 if [[ ! "$TERM_PROGRAM" = "Apple_Terminal" ]]; then
